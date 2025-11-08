@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Event, { IEvent } from '@/database/event.model';
 
 type RouteParams = {
-    params: { slug: string };
+    params: Promise<{slug:string}>;
 };
 
 
@@ -14,7 +14,7 @@ export async function GET(
     try {
         await connectDB();
         // Await and extract slug from params
-        const { slug } = params;
+        const {slug} = await params;
         // validate slug parameter
 
         if (!slug || typeof slug !== 'string' || slug.trim() === '') {
