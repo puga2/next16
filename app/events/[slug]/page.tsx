@@ -2,11 +2,13 @@ import EventDetail from "@/Components/EventDetail";
 import { Suspense } from "react";
 
 const EventDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
-  // params is already a Promise<{ slug: string }>
+  const slug = params.then((p)=>p.slug);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <EventDetail params={params} />
+<main>
+      <Suspense fallback={<div>Loading...</div>}>
+      <EventDetail params={slug} />
     </Suspense>
+</main>
   )
 }
 

@@ -1,5 +1,5 @@
 'use client';
-import { createBooking } from '@/lib/actions/booking.action';
+import { createBooking } from '@/lib/actions/booking.actions';
 import { create } from 'domain';
 import posthog from 'posthog-js';
 import React, { useState } from 'react'

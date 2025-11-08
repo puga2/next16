@@ -1,7 +1,7 @@
 import BookEvent from '@/Components/BookEvent';
 import EventCard from '@/Components/EventCard';
 import { IEvent } from '@/database';
-import { getSimilarEventsBySlug } from '@/lib/actions/event.action';
+import { getSimilarEventsBySlug } from '@/lib/actions/event.actions';
 import { cacheLife } from 'next/cache';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
